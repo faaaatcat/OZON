@@ -1,70 +1,33 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сайт верстальщика</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-        <h1>личный сайт версальщика</h1>
-        <img class="logo" src="img/bicycle.svg" art="logo">
-            <ul class="main-nav">
-                <li class="nav-item"><a href="#about">Обо мне</a></li>
-                <li class="nav-item"><a href="#myart">Мои статьи</a></li>
-            </ul>    
-        </div>
-    </header>
-
-    <main>
-        <section class="about" id="about">
-            <div class="container">
-                <h2>Обо мне</h2>
-                <a href="img/verstka.jpg" download>
-                    <img class="avatare" src="img/verstka.jpg" art="about">
-                </a>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores consequuntur vel corrupti ad, nisi,
-                    rerum ut ratione, ipsa natus consequatur error voluptatibus est sapiente esse hic? Repellendus aliquam
-                    eaque sequi.</p>
-                <br>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam eveniet molestiae at autem, doloribus
-                    reprehenderit doloremque esse culpa voluptates, inventore totam ut consequuntur architecto quas odio
-                    ipsa saepe nihil voluptatibus.</p>
+    <div class = "container">
+        <dev class="logo"><img src="img/ozon-id-v2.svg" alt="logo"></dev>
+        <dev class="text__big">Введите номер телефона</dev>
+        <dev class="text">Мы отправим код или позвоним. Отвечать на звонок не нужно. Код может прийти на почту или в СМС</dev>
+        <form  method="get" action="/php/server.php" class="l">
+        <dev class="nomber">
+            <div class="cantru">
+                <img class="cantru__icon" src="img/russia.png">
+                <dev>+7</dev>
+                <img class="cantru__dovn" src="img/down.png">
             </div>
-
-        </section>
-        <section class="articles" id="myart">
-            <div class="container">
-                <h2>Мои статьи</h2>
-                <br>
-                    <ol>
-                        <li><a href="articl1.html">Что такое html</a></li>
-                        <li><a href="articl2.html">Топ лучших редакторов html кода</a></li>
-                        <li><a href="articl3.html">Определение структуры сайта</a></li>
-                        <li><a href="articl4.html">Список терминов</a></li>
-                    </ol>
-
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; Матвеева Ольга, 2023</p>
-            <p>Вы также можете найти меня <a target="_blank" href="https://www.inueco.ru/">здесь</a></p>
-            <a target="_blank" href="https://www.google.com/webhp?hl=ru&sa=X&ved=0ahUKEwiy4Im_haz_AhWQmYsKHYgFDp8QPAgI"><img class="icon" src="img/google.svg" art="google"></a>
-            <a target="_blank" href="https://github.com/"><img class="icon" src="img/github.svg" art="github"></a>
-            <a target="_blank" href="https://ru-ru.facebook.com/"><img class="icon" src="img/facebook.svg" art="facebook"></a>
-
-        </div>
-    </footer>
+            <dev class="phone">
+                <input class="phone__n" name="c" type="text" id="fname" placeholder="999 999 99 99"><br><br>
+            </dev>
+            
+        </dev> 
+        <input class="nomder__button" type="submit">
+    </form>
+    </div>
 
 </body>
-
 </html>
