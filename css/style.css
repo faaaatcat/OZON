@@ -1,0 +1,258 @@
+@font-face {
+    font-family: 'gt_eesti_pro_displaymedium';
+    src: url('../fonts/gteestiprodisplay_medium-webfont.woff2') format('woff2'),
+         url('../fonts/gteestiprodisplay_medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'gt_eesti_pro_displayregular';
+    src: url('../fonts/gteestiprodisplay_regular-webfont.woff2') format('woff2'),
+         url('../fonts/gteestiprodisplay_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+body {
+    background-color: rgb(212, 220, 238);
+    font-family: "gt_eesti_pro_displayregular", Helvetica, sans-serif;
+    color: #001a34;
+    background: url('../img/pages.jpg');
+    background-size:cover;
+    height: 1800px;
+}
+
+body::before{
+    content: '';
+	display: block;
+	width: 100%;
+    height: 1850px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color:rgba(0, 0, 0, .5);
+}
+
+.container{
+    background-color: rgb(255, 255, 255);
+    width: 350px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 2% 3%;
+    border-radius: 5%;
+    gap: 20px;
+    position: fixed;
+    top: 5%; 
+    left: 35%; 
+}
+
+.container2{
+    background-color: rgb(255, 255, 255);
+    width: 350px;
+    height: 520px;
+    display: flex;
+    flex-direction: column;
+    padding: 2% 3%;
+    border-radius: 5%;
+    gap: 20px;
+    position: fixed;
+    top: 5%; 
+    left: 35%; 
+}
+
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.clos {
+    width: 32px;
+    height: 32px;
+    background-color: rgba(204, 214, 228, 0.4);
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.clos__icon {
+    width: 90%;
+    height: 90%;
+    position: absolute;
+    top: 2px;
+    left: 1px;
+}
+
+.clos:hover {
+    background-color: rgba(204, 214, 228, 0.6);
+}
+
+.logo {
+    width: 40%;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    margin-top: 10px;
+} 
+
+.text__big {
+    font-family: "gt_eesti_pro_displaymedium", Helvetica, sans-serif;
+    font-size: 30px;
+}
+
+.text {
+    font-size: 14px;
+}
+
+.l {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+
+}
+
+.nomber {
+    border: solid rgb(190, 190, 190) 2px;
+    border-radius: 5px;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nomber:hover {
+    border: solid blue 2px; 
+}
+
+.cantru {
+    width: 17%;
+    background-color: rgb(235, 235, 235);
+    border-radius: 5px;
+    margin: 5px;
+    padding: 8px;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.cantru__icon {
+    width: 30%;
+    height: auto;
+}
+
+.cantru__dovn {
+    width: 15%;
+    height: auto;
+}
+
+.phone {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.phone__n {
+    height: 95%;
+    width: 95%;
+    font-size: 16px;
+    border: none;
+    outline: none;
+}
+
+.nomder__button {
+    width: 100%;
+    height: 40px;
+    background-color: blue;
+    color: aliceblue;
+    border: none;
+    border-radius: 10px;
+
+}
+
+.code {
+    height: 95%;
+    width: 95%;
+    font-size: 16px;
+    border: none;
+    outline: none;
+    text-align: center;
+}
+
+.codsms {
+	width: 100%;
+    text-align: center;
+    display: inline-block;
+	padding: 15px 0px;
+	background: #005bff;
+	font-size: 16px;
+	text-decoration: none;
+	color: #fff;
+    border-radius: 10px;
+}
+
+.codsms:hover {
+	color: #fff;
+	background: #0084ff;
+}
+.codsms:active {
+	background: #0084ff;
+}
+
+.content_toggle {
+	width: 100%;
+    text-align: center;
+    display: inline-block;
+	padding: 15px 0px;
+	background: #005bff;
+	font-size: 16px;
+	text-decoration: none;
+	color: #fff;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+.content_toggle:hover {
+	color: #fff;
+	background: #0084ff;
+}
+.content_toggle:active {
+	background: #0084ff;
+}
+
+.content_toggle.open {
+	display: none;
+}
+
+.content_block {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.text__or {
+    font-size: 14px;
+    color: rgba(0, 26, 52, .4);
+}
+
+.email {
+    font-size: 16px;
+    color: #005bff;
+    text-decoration: none;
+}
+
+.noot {
+    display: none;
+}
+
+
